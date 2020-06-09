@@ -1,0 +1,40 @@
+.mario {
+  width: 125px;
+  height: 150px;
+}
+
+.hatMario {
+  background-color: red;
+  height: 50px;
+  font-weight: 900;
+}
+
+.headMario {
+  background-color: bisque;
+  height: 40px;
+}
+
+.bodyMario {
+  background-color: #2A31FF;
+  height: 100px;
+}
+
+.luigi {
+  width: 100px;
+}
+
+.hatLuigi {
+  background-color: green;
+  height: 50px;
+  font-weight: 900;
+}
+
+.headLuigi {
+  background-color: bisque;
+  height: 40px;
+}
+
+.bodyLuigi {
+  background-color: #2A31FF;
+  height: 100px;
+}

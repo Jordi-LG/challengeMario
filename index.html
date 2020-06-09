@@ -15,9 +15,45 @@
 
     <title>Challenge Mario</title>
   </head>
-  <body>
-    <div id="app">
-      {{ message }}
+  <body class="mt-2">
+    <div class="container border p-0" id="app">
+      <header>
+        <h1 class="text-center">Challenge Mario</h1>
+      </header>
+      <main class="container my-2">
+        <div class="row justify-content-center justify-content-sm-between">
+          <div class="d-flex flex-column p-0 col-5 col-sm-2 order-sm-0 m-2 order-1">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+          </div>
+
+          <div class="character d-flex align-items-end p-0 order-sm-1 order-3">
+            <div class="mario d-flex flex-column">
+              <div class="hatMario text-center rounded-top"> M </div>
+              <div class="headMario"></div>
+              <div class="bodyMario"></div>
+            </div>
+
+            <!-- <div class="luigi d-flex flex-column m-0">
+              <div class="hatLuigi text-center rounded-top"> L </div>
+              <div class="headLuigi"></div>
+              <div class="bodyLuigi"></div>
+            </div> -->
+          </div>
+
+          <div class="border p-0 col-sm-2 col-5 order-sm-2 m-2 order-2 text-center">
+            <p>Star <br> {{ star }}</p>
+            <p>Mushroom <br> {{ mushroom }}</p>
+          </div>
+
+        </div>
+        <div class="border mt-3">
+          <p class="text-center">
+            lives: {{ lives }}
+          </p>
+        </div>
+      </main>
 
     </div>
 
