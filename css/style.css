@@ -1,55 +1,131 @@
 .screenplay {
-  height: 300px;
+  height: auto;
+}
+
+.character {
+  height: 18.75em;
+}
+
+.hero-icon {
+  width: 16px;
+  height: 16px;
+}
+
+@keyframes changewidthMario {
+  from {
+    height: 6.250px;
+  }
+
+  to {
+    height: 11.875em;
+  }
 }
 
 .mario {
   width: 125px;
-  height: 100px;
+  height: 6.250em;
 }
 
 .marioMushroom {
   width: 125px;
-  height: 150px;
+  height: 11.875em;
+  animation-iteration-count: 3;
+  animation-duration: 0.2s;
+  animation-name: changewidthMario;
 }
 
 .hatMario {
   background-color: red;
-  height: 50px;
+  height: 20%;
   font-weight: 900;
 }
 
 .headMario {
   background-color: bisque;
-  height: 40px;
+  height:30%;
 }
 
 .bodyMario {
   background-color: #2A31FF;
-  height: 100px;
+  height: 50%;
+}
+
+@keyframes changewidthLuigi {
+  from {
+    height: 6.250em;
+  }
+
+  to {
+    height: 15.625em;
+  }
 }
 
 .luigi {
   width: 100px;
-  height: 100px;
+  height: 6.250em;
 }
 
 .luigiMushroom {
   width: 100px;
-  height: 180px;
+  height: 15.625em;
+  animation-iteration-count: 3;
+  animation-duration: 0.2s;
+  animation-name: changewidthLuigi;
+
 }
 
 .hatLuigi {
   background-color: green;
-  height: 50px;
+  height: 20%;
   font-weight: 900;
 }
 
 .headLuigi {
   background-color: bisque;
-  height: 40px;
+  height: 30%;
 }
 
 .bodyLuigi {
   background-color: #2A31FF;
-  height: 100px;
+  height: 50%;
+}
+
+.demo{
+  width:400px;
+  height:400px;
+  font-size:5em;
+  float:left;
+  text-align:center;
+}
+
+
+/* Rainbow when star(true) */
+.giveStar { 
+background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+background-size: 1800% 1800%;
+
+-webkit-animation: rainbow 18s ease infinite;
+-z-animation: rainbow 18s ease infinite;
+-o-animation: rainbow 18s ease infinite;
+  animation: rainbow 5s ease infinite;}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
 }
