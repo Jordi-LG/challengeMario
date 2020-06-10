@@ -21,6 +21,7 @@ let vm = new Vue({
     starMessageBtn: 'Collect a star',
     mushroom: false,
     lives: 3,
+    invincible: 'Invincible !!!'
   },
 
   methods: {

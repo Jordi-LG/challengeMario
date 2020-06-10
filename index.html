@@ -53,8 +53,11 @@
 
         </div>
         <div class="border mt-3">
-          <p class="text-center">
+          <p class="text-center" v-if="!star">
             lives: {{ lives }}
+          </p>
+          <p class="text-center" v-else="star">
+            lives: {{ invincible }}
           </p>
         </div>
       </main>
