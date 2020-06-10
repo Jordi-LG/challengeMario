@@ -1,18 +1,30 @@
 let btnStar = {
   props: ['star-message-btn'],
 
-  template: `<button @click="status"> {{ starMessageBtn }} </button>`,
+  template: `<button @click="starStatus"> {{ starMessageBtn }} </button>`,
 
   methods: {
-    status() {
-      this.$emit('status')
+    starStatus() {
+      this.$emit('star-status')
+    }
+  }
+}
+
+let btnMushroom = {
+  props: ['mushroom-message-btn'],
+
+  template: `<button @click="mushroomStatus"> {{ mushroomMessageBtn }} </button>`,
+
+  methods: {
+    mushroomStatus() {
+      this.$emit('mushroom-status')
     }
   }
 }
 
 let vm = new Vue({
   el: "#app",
-  components: { btnStar },
+  components: { btnStar, btnMushroom },
   
   data: {
     title: 'Salut',
@@ -20,6 +32,7 @@ let vm = new Vue({
     star: false,
     starMessageBtn: 'Collect a star',
     mushroom: false,
+    mushroomMessageBtn: 'Give a mushroom',
     lives: 3,
     invincible: 'Invincible !!!'
   },
@@ -32,6 +45,12 @@ let vm = new Vue({
       } else {
         this.star = false;
         this.starMessageBtn = 'Collect a star';
+      }
+    },
+    
+    changeMushroom: function() {      
+      if(this.mushroom === false) {
+        this.mushroom = true;
       }
     }
   }

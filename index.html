@@ -24,11 +24,11 @@
         <div class="row justify-content-center justify-content-sm-between">
           <div class="d-flex flex-column p-0 col-5 col-sm-2 order-sm-0 m-2 order-1">
             <!-- Button to change boolean star -->
-            <btn-star v-if="!star" :star-message-btn="starMessageBtn" @status="changeStar"></btn-star>
-            <btn-star v-else :star-message-btn="starMessageBtn" @status="changeStar"></btn-star>
+            <btn-star v-if="!star" :star-message-btn="starMessageBtn" @star-status="changeStar"></btn-star>
+            <btn-star v-else :star-message-btn="starMessageBtn" @star-status="changeStar"></btn-star>
 
             
-            <button>2</button>
+            <btn-mushroom :mushroom-message-btn="mushroomMessageBtn" @mushroom-status="changeMushroom"></btn-mushroom>
             <button>3</button>
           </div>
 
