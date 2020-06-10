@@ -21,7 +21,7 @@
         <h1 class="text-center">Challenge Mario</h1>
       </header>
       <main class="container my-2">
-        <div class="row justify-content-center justify-content-sm-between">
+        <div class="row justify-content-center justify-content-sm-between screenplay align-items-center">
           <div class="d-flex flex-column p-0 col-5 col-sm-2 order-sm-0 m-2 order-1">
             <!-- Button to change boolean star -->
             <btn-star v-if="!star" :star-message-btn="starMessageBtn" @star-status="changeStar"></btn-star>
@@ -32,18 +32,20 @@
             <button>3</button>
           </div>
 
-          <div class="character d-flex align-items-end p-0 order-sm-1 order-3">
-            <div class="mario d-flex flex-column">
+          <div class="character d-flex align-items-end p-0 order-sm-1 order-3 align-self-end">
+            <!-- <div class="mario d-flex flex-column" v-bind:class="{ marioMushroom : mushroom }">
               <div class="hatMario text-center rounded-top"> M </div>
               <div class="headMario"></div>
               <div class="bodyMario"></div>
-            </div>
-
-            <!-- <div class="luigi d-flex flex-column m-0">
-              <div class="hatLuigi text-center rounded-top"> L </div>
-              <div class="headLuigi"></div>
-              <div class="bodyLuigi"></div>
             </div> -->
+
+            <transition name="size-hero" mode="out-in">
+              <div class="luigi d-flex flex-column m-0 align-self-end" v-if="!mushroom">
+                <div class="hatLuigi text-center rounded-top"> L </div>
+                <div class="headLuigi"></div>
+                <div class="bodyLuigi"></div>
+              </div>
+            </transition>
           </div>
 
           <div class="border p-0 col-sm-2 col-5 order-sm-2 m-2 order-2 text-center">

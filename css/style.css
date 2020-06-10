@@ -1,6 +1,15 @@
+.screenplay {
+  height: 300px;
+}
+
 .mario {
   width: 125px;
   height: 100px;
+}
+
+.marioMushroom {
+  width: 125px;
+  height: 150px;
 }
 
 .hatMario {
@@ -21,6 +30,12 @@
 
 .luigi {
   width: 100px;
+  height: 100px;
+}
+
+.luigiMushroom {
+  width: 100px;
+  height: 180px;
 }
 
 .hatLuigi {
