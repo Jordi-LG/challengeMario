@@ -29,7 +29,9 @@
 
             
             <btn-mushroom :mushroom-message-btn="mushroomMessageBtn" @mushroom-status="changeMushroom"></btn-mushroom>
-            <button>3</button>
+            <button @click="giveOneLive">{{ oneUpMessageBtn }}</button>
+            <button @click="hitHero">{{ oneUpMessageBtn }}</button>
+
           </div>
 
           <div class="character d-flex align-items-end p-0 order-sm-1 order-3">
@@ -41,13 +43,13 @@
               <div class="bodyMario" v-bind:class="{ giveStar : star }"></div>
             </div>
 
-            <div class="luigi d-flex flex-column" v-bind:class="{ luigiMushroom : mushroom }">
+            <!-- <div class="luigi d-flex flex-column" v-bind:class="{ luigiMushroom : mushroom }">
               <div class="hatLuigi d-flex justify-content-center align-items-center rounded-top" v-bind:class="{ giveStar : star }">
                <p class="d-flex justify-content-center align-items-center rounded hero-icon bg-white m-0">L</p>
               </div>
               <div class="headLuigi"></div>
               <div class="bodyLuigi" v-bind:class="{ giveStar : star }"></div>
-            </div>
+            </div> -->
           </div>
 
           <div class="border p-0 col-sm-2 col-5 order-sm-2 m-2 order-2 text-center">

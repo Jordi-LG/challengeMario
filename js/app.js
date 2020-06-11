@@ -33,6 +33,7 @@ let vm = new Vue({
     starMessageBtn: 'Collect a star',
     mushroom: false,
     mushroomMessageBtn: 'Give a mushroom',
+    oneUpMessageBtn: '1up',
     lives: 3,
     invincible: 'Invincible !!!'
   },
@@ -51,6 +52,16 @@ let vm = new Vue({
     changeMushroom: function() {      
       if(this.mushroom === false) {
         this.mushroom = true;
+      }
+    },
+
+    giveOneLive() {
+      this.lives++;
+    },
+
+    hitHero() {
+      if(this.star === false) {
+        return (this.lives >=1 ? this.lives-- : this.lives = 0)
       }
     }
   }
