@@ -11,13 +11,23 @@
   height: 16px;
 }
 
-@keyframes changewidthMario {
+@keyframes eatMushroom {
   from {
-    height: 6.250px;
+    height: 6.250em;
   }
 
   to {
     height: 11.875em;
+  }
+}
+
+@keyframes shrinkMario {
+  from {
+    height: 11.875em;
+  }
+
+  to {
+    height: 6.250em;
   }
 }
 
@@ -26,12 +36,20 @@
   height: 6.250em;
 }
 
+
+.marioSize-enter-active {
+  animation-name: eatMushroom;
+  animation-duration: 0.5s;
+}
+
+.marioSize-leave-active {
+  animation: 0.5s shrinkMario;
+}
+
+
 .marioMushroom {
   width: 125px;
   height: 11.875em;
-  animation-iteration-count: 3;
-  animation-duration: 0.2s;
-  animation-name: changewidthMario;
 }
 
 .hatMario {

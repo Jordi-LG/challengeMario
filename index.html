@@ -35,21 +35,24 @@
           </div>
 
           <div class="character d-flex align-items-end p-0 order-sm-1 order-3">
-            <!-- <div class="mario d-flex flex-column" v-bind:class="{ marioMushroom : mushroom }">
-              <div class="hatMario d-flex justify-content-center align-items-center rounded-top" v-bind:class="{ giveStar : star }"> 
-                <p class="d-flex justify-content-center align-items-center rounded hero-icon bg-white m-0">M</p> 
+            <transition name="marioSize">
+              <div class="mario d-flex flex-column" v-show="mushroom" v-bind:class="{ marioMushroom : mushroom }">
+                <div class="hatMario d-flex justify-content-center align-items-center rounded-top" v-bind:class="{ giveStar : star }"> 
+                  <p class="d-flex justify-content-center align-items-center rounded hero-icon bg-white m-0">M</p> 
+                </div>
+                <div class="headMario"></div>
+                <div class="bodyMario" v-bind:class="{ giveStar : star }"></div>
               </div>
-              <div class="headMario"></div>
-              <div class="bodyMario" v-bind:class="{ giveStar : star }"></div>
-            </div> -->
+            </transition>
 
-            <div class="luigi d-flex flex-column" v-bind:class="{ luigiMushroom : mushroom }">
+
+            <!-- <div class="luigi d-flex flex-column" v-bind:class="{ luigiMushroom : mushroom }">
               <div class="hatLuigi d-flex justify-content-center align-items-center rounded-top" v-bind:class="{ giveStar : star }">
                <p class="d-flex justify-content-center align-items-center rounded hero-icon bg-white m-0">L</p>
               </div>
               <div class="headLuigi"></div>
               <div class="bodyLuigi" v-bind:class="{ giveStar : star }"></div>
-            </div>
+            </div> -->
           </div>
 
           <div class=" p-0 col-sm-2 col-5 order-sm-2 m-2 order-2 text-center">
