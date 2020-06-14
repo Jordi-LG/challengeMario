@@ -5,10 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/style.css">
+
+    
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
@@ -21,20 +25,20 @@
         <h1 class="text-center">Challenge Mario</h1>
       </header>
       <main class="container my-2">
-        <div class="row justify-content-center justify-content-sm-between screenplay align-items-center">
-          <div class="d-flex flex-column p-0 col-5 col-sm-2 order-sm-0 m-2 order-1">
+        <div class="row justify-content-center justify-content-md-between screenplay align-items-center">
+          <div class="d-flex flex-column p-0 col-5 col-md-3 order-md-0 m-2 order-1">
             <!-- Button to change boolean star -->
             <btn-star v-if="!star" :star-message-btn="starMessageBtn" @star-status="changeStar"></btn-star>
             <btn-star v-else :star-message-btn="starMessageBtn" @star-status="changeStar"></btn-star>
 
             
             <btn-mushroom v-if="!mushroom" :mushroom-message-btn="mushroomMessageBtn" @mushroom-status="changeMushroom"></btn-mushroom>
-            <button @click="giveOneLive">{{ oneUpMessageBtn }}</button>
-            <button @click="hitHero">{{ hitMessageBtn }}</button>
+            <button class="btn-1up btn-lg m-1" @click="giveOneLive">{{ oneUpMessageBtn }}</button>
+            <button class="btn-hit font-weight-bolder btn-lg m-1" @click="hitHero">{{ hitMessageBtn }}</button>
 
           </div>
 
-          <div class="character d-flex align-items-end p-0 order-sm-1 order-3">
+          <div class="character d-flex align-items-end p-0 order-md-1 order-3">
             <transition name="marioSize">
               <div class="mario d-flex flex-column" v-show="mushroom" v-bind:class="{ marioMushroom : mushroom }">
                 <div class="hatMario d-flex justify-content-center align-items-center rounded-top" v-bind:class="{ giveStar : star }"> 
@@ -46,7 +50,7 @@
             </transition>
 
 
-            <!-- <div class="luigi d-flex flex-column" v-bind:class="{ luigiMushroom : mushroom }">
+            <!-- <div class="luigi d-flex flex-column" v-show="mushroom" v-bind:class="{ luigiMushroom : mushroom }">
               <div class="hatLuigi d-flex justify-content-center align-items-center rounded-top" v-bind:class="{ giveStar : star }">
                <p class="d-flex justify-content-center align-items-center rounded hero-icon bg-white m-0">L</p>
               </div>
@@ -55,11 +59,11 @@
             </div> -->
           </div>
 
-          <div class=" p-0 col-sm-2 col-5 order-sm-2 m-2 order-2 text-center">
+          <div class=" p-0 col-md-3 col-5 order-md-2 m-2 order-2 text-center">
             <h5 class="m-0">Conditions</h5>
-            <div class="border">
-              <p>Star <br> {{ star }}</p>
-              <p>Mushroom <br> {{ mushroom }}</p>
+            <div class="border rounded">
+              <p class="m-3"><u>Star</u> <br> {{ star }}</p>
+              <p class="m-3"><u>Mushroom</u> <br> {{ mushroom }}</p>
             </div>
           </div>
         </div>

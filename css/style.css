@@ -1,3 +1,7 @@
+body {
+  font-family: 'Acme', sans-serif;
+}
+
 .screenplay {
   height: auto;
 }
@@ -146,4 +150,27 @@ background-size: 1800% 1800%;
     0%{background-position:0% 82%}
     50%{background-position:100% 19%}
     100%{background-position:0% 82%}
+}
+
+.btn-hit {
+  background-color: #F7BE07;
+  color: red
+}
+
+.btn-1up {
+  background-color: #2CC573;
+  color: #F0F8F8;
+}
+
+.btn-mushroom {
+  background-color: #F9444D;
+}
+
+.btn-hit:hover, .btn-1up:hover, .btn-mushroom:hover, .btn-star:hover {
+  transform: translateY(4px);
+  transition: 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-star {
+  background-color: #FFF12A;
 }

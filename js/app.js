@@ -1,7 +1,7 @@
 let btnStar = {
   props: ['star-message-btn'],
 
-  template: `<button @click="starStatus"> {{ starMessageBtn }} </button>`,
+  template: `<button class="btn-star btn-lg m-1" @click="starStatus"> {{ starMessageBtn }} </button>`,
 
   methods: {
     starStatus() {
@@ -13,7 +13,7 @@ let btnStar = {
 let btnMushroom = {
   props: ['mushroom-message-btn'],
 
-  template: `<button @click="mushroomStatus"> {{ mushroomMessageBtn }} </button>`,
+  template: `<button class="btn-mushroom btn-lg m-1" @click="mushroomStatus"> {{ mushroomMessageBtn }} </button>`,
 
   methods: {
     mushroomStatus() {
