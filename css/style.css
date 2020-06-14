@@ -15,7 +15,15 @@ body {
   height: 16px;
 }
 
-@keyframes eatMushroom {
+.nameLuigi {
+  color: green;
+}
+
+.nameMario {
+  color: red;
+}
+
+@keyframes eatMushroomMario {
   from {
     height: 6.250em;
   }
@@ -35,29 +43,29 @@ body {
   }
 }
 
-.mario {
+.heroMario {
   width: 125px;
   height: 6.250em;
 }
 
 
-.marioSize-enter-active {
-  animation-name: eatMushroom;
+.sizeMario-enter-active {
+  animation-name: eatMushroomMario;
   animation-duration: 0.5s;
 }
 
-.marioSize-leave-active {
+.sizeMario-leave-active {
   animation: 0.5s shrinkMario;
 }
 
 
-.marioMushroom {
+.mushroomMario {
   width: 125px;
   height: 11.875em;
 }
 
 .hatMario {
-  background-color: red;
+  background-color: #CF1319;
   height: 20%;
   font-weight: 900;
 }
@@ -72,7 +80,7 @@ body {
   height: 50%;
 }
 
-@keyframes changewidthLuigi {
+@keyframes eatMushroomLuigi {
   from {
     height: 6.250em;
   }
@@ -82,22 +90,37 @@ body {
   }
 }
 
-.luigi {
+@keyframes shrinkLuigi {
+  from {
+    height: 15.625em;
+  }
+
+  to {
+    height: 6.250em;
+  }
+}
+
+.sizeLuigi-enter-active {
+  animation-name: eatMushroomLuigi;
+  animation-duration: 0.5s;
+}
+
+.sizeLuigi-leave-active {
+  animation: 0.5s shrinkLuigi;
+}
+
+.heroLuigi {
   width: 100px;
   height: 6.250em;
 }
 
-.luigiMushroom {
+.mushroomLuigi {
   width: 100px;
   height: 15.625em;
-  animation-iteration-count: 3;
-  animation-duration: 0.2s;
-  animation-name: changewidthLuigi;
-
 }
 
 .hatLuigi {
-  background-color: green;
+  background-color: #38A43E;
   height: 20%;
   font-weight: 900;
 }
@@ -173,4 +196,14 @@ background-size: 1800% 1800%;
 
 .btn-star {
   background-color: #FFF12A;
+}
+
+.btn-Mario {
+  background-color: #CF1319;
+  color: black
+}
+
+.btn-Luigi {
+  background-color: #38A43E;
+  color: black
 }

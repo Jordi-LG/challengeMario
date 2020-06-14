@@ -38,25 +38,19 @@
 
           </div>
 
-          <div class="character d-flex align-items-end p-0 order-md-1 order-3">
-            <transition name="marioSize">
-              <div class="mario d-flex flex-column" v-show="mushroom" v-bind:class="{ marioMushroom : mushroom }">
-                <div class="hatMario d-flex justify-content-center align-items-center rounded-top" v-bind:class="{ giveStar : star }"> 
+          <div class="character d-flex align-items-end p-0 order-md-1 order-3" v-if="!hero">
+          </div>
+
+          <div class="character d-flex align-items-end p-0 order-md-1 order-3" v-else>
+            <transition :name="'size' + heroName">
+              <div class="d-flex flex-column" v-show="mushroom" v-bind:class="{ ['mushroom'+heroName] : mushroom, ['hero'+heroName] : hero }">
+                <div class="d-flex justify-content-center align-items-center rounded-top" :class="['hat'+heroName, { giveStar : star }]"> 
                   <p class="d-flex justify-content-center align-items-center rounded hero-icon bg-white m-0">M</p> 
                 </div>
-                <div class="headMario"></div>
-                <div class="bodyMario" v-bind:class="{ giveStar : star }"></div>
+                <div :class="['head'+heroName]"></div>
+                <div :class="['body'+heroName, { giveStar : star }]"></div>
               </div>
             </transition>
-
-
-            <!-- <div class="luigi d-flex flex-column" v-show="mushroom" v-bind:class="{ luigiMushroom : mushroom }">
-              <div class="hatLuigi d-flex justify-content-center align-items-center rounded-top" v-bind:class="{ giveStar : star }">
-               <p class="d-flex justify-content-center align-items-center rounded hero-icon bg-white m-0">L</p>
-              </div>
-              <div class="headLuigi"></div>
-              <div class="bodyLuigi" v-bind:class="{ giveStar : star }"></div>
-            </div> -->
           </div>
 
           <div class=" p-0 col-md-3 col-5 order-md-2 m-2 order-2 text-center">
@@ -67,15 +61,25 @@
             </div>
           </div>
         </div>
+
+        <div class="row">
+          <div class="d-flex justify-content-between col-12" v-if="!hero">
+            <button class="btn-Mario btn-lg col-5" @click="changeHero('Mario')">Mario</button>
+            <button class="btn-Luigi btn-lg col-5" @click="changeHero('Luigi')">Luigi</button>
+          </div>
+        </div>
   
         <div class="border mt-3">
           <p class="text-center m-0" v-if="!star">
-            lives: {{ lives }}
+            Lifes: {{ lives }}
           </p>
           <p class="text-center m-0" v-bind:class="{ giveStar : star }" v-else="star">
             {{ invincible }}
           <br>
-            lives : {{ lives }} 
+            Lifes : {{ lives }} 
+          </p>
+          <p class="m-0 text-center" v-if="hero">
+            It's me, <b  :class="{nameLuigi : heroName==='Luigi', nameMario:heroName==='Mario'}" >{{ heroName }}</b> !
           </p>
         </div>
       </main>
