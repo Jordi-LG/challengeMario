@@ -24,7 +24,7 @@
       <header>
         <h1 class="text-center">Challenge Mario</h1>
       </header>
-      <main class="container my-2">
+      <main v-if="hero"  class="container my-2">
         <div class="row justify-content-center justify-content-md-between screenplay align-items-center">
           <div class="d-flex flex-column p-0 col-5 col-md-3 order-md-0 m-2 order-1">
             <!-- Button to change boolean star -->
@@ -34,7 +34,7 @@
             
             <btn-mushroom v-if="!mushroom" :mushroom-message-btn="mushroomMessageBtn" @mushroom-status="changeMushroom"></btn-mushroom>
             <button class="btn-1up btn-lg m-1" @click="giveOneLive">{{ oneUpMessageBtn }}</button>
-            <button class="btn-hit font-weight-bolder btn-lg m-1" @click="hitHero">{{ hitMessageBtn }}</button>
+            <button class="btn-hit font-weight-bolder btn-lg m-1" @click="hitHero" :disabled="star">{{ hitMessageBtn }}</button>
 
           </div>
 
@@ -45,7 +45,7 @@
             <transition :name="'size' + heroName">
               <div class="d-flex flex-column" v-show="mushroom" v-bind:class="{ ['mushroom'+heroName] : mushroom, ['hero'+heroName] : hero }">
                 <div class="d-flex justify-content-center align-items-center rounded-top" :class="['hat'+heroName, { giveStar : star }]"> 
-                  <p class="d-flex justify-content-center align-items-center rounded hero-icon bg-white m-0">M</p> 
+                  <p class="d-flex justify-content-center align-items-center rounded hero-icon bg-white m-0">{{ letterHero }}</p> 
                 </div>
                 <div :class="['head'+heroName]"></div>
                 <div :class="['body'+heroName, { giveStar : star }]"></div>
@@ -61,29 +61,34 @@
             </div>
           </div>
         </div>
-
-        <div class="row">
-          <div class="d-flex justify-content-between col-12" v-if="!hero">
-            <button class="btn-Mario btn-lg col-5" @click="changeHero('Mario')">Mario</button>
-            <button class="btn-Luigi btn-lg col-5" @click="changeHero('Luigi')">Luigi</button>
-          </div>
-        </div>
   
-        <div class="border mt-3">
-          <p class="text-center m-0" v-if="!star">
-            Lifes: {{ lives }}
-          </p>
-          <p class="text-center m-0" v-bind:class="{ giveStar : star }" v-else="star">
-            {{ invincible }}
-          <br>
-            Lifes : {{ lives }} 
-          </p>
+        <div class="border mt-3 text-center">
+              <p class="d-inline-block text-center m-0">
+                Lifes: 
+              </p>
+                <transition name="lifes" mode="out-in">
+                  <div class="d-inline-flex ml-1" :key="lives">
+                    {{ lives }}          
+                  </div>
+                </transition>
+
+            <p class="text-center m-0" v-bind:class="{ giveStar : star }" v-if="star">
+              {{ invincible }}
+            </p>
           <p class="m-0 text-center" v-if="hero">
             It's me, <b  :class="{nameLuigi : heroName==='Luigi', nameMario:heroName==='Mario'}" >{{ heroName }}</b> !
           </p>
         </div>
       </main>
 
+      <main v-else class="container my-2">
+        <div class="row">
+          <div class="d-flex justify-content-between col-12">
+            <button class="btn-Mario btn-lg col-5" @click="changeHero('Mario')">Mario</button>
+            <button class="btn-Luigi btn-lg col-5" @click="changeHero('Luigi')">Luigi</button>
+          </div>
+        </div>
+      </main>
     </div>
 
     <!-- Optional JavaScript -->

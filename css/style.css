@@ -207,3 +207,11 @@ background-size: 1800% 1800%;
   background-color: #38A43E;
   color: black
 }
+
+.lifes-enter-active, .lifes-leave-active {
+  transition: all 0.5s;
+}
+.lifes-enter, .lifes-leave-to /* .list-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateX(30px);
+}

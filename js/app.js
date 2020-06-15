@@ -37,6 +37,7 @@ let vm = new Vue({
     hitMessageBtn: 'Hit !',
     hero: false,
     heroName: '',
+    letterHero: '',
 
     lives: 3,
     invincible: 'Invincible !!!'
@@ -62,6 +63,7 @@ let vm = new Vue({
     changeHero: function(name) {
       this.hero = true;
       this.heroName = name;
+      this.letterHero = name.charAt(0);
     },
 
     giveOneLive() {
