@@ -20,8 +20,8 @@
     <title>Challenge Mario</title>
   </head>
   <body class="mt-2">
-    <div class="container border p-0" id="app">
-      <header>
+    <div class="container border p-0 d-flex flex-column justify-content-center" id="app">
+      <header class="">
         <h1 class="text-center">Challenge Mario</h1>
       </header>
       <main v-if="hero"  class="container my-2">
@@ -34,7 +34,7 @@
             
             <btn-mushroom v-if="!mushroom" :mushroom-message-btn="mushroomMessageBtn" @mushroom-status="changeMushroom"></btn-mushroom>
             <button class="btn-1up btn-lg m-1" @click="giveOneLive">{{ oneUpMessageBtn }}</button>
-            <button class="btn-hit font-weight-bolder btn-lg m-1" @click="hitHero" :disabled="star">{{ hitMessageBtn }}</button>
+            <button class="btn-hit font-weight-bolder btn-lg m-1" @click="hitHero" :disabled="isDisabled()">{{ hitMessageBtn }}</button>
 
           </div>
 
@@ -71,10 +71,6 @@
                     {{ lives }}          
                   </div>
                 </transition>
-
-            <p class="text-center m-0" v-bind:class="{ giveStar : star }" v-if="star">
-              {{ invincible }}
-            </p>
           <p class="m-0 text-center" v-if="hero">
             It's me, <b  :class="{nameLuigi : heroName==='Luigi', nameMario:heroName==='Mario'}" >{{ heroName }}</b> !
           </p>

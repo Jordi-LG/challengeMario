@@ -78,6 +78,10 @@ let vm = new Vue({
           return this.mushroom = false;
         }
       }
+    },
+
+    isDisabled() {
+      return this.star || this.lives === 0;
     }
   }
 

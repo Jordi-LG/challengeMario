@@ -1,5 +1,8 @@
-body {
+#app {
   font-family: 'Acme', sans-serif;
+  min-height: 100vh;
+  background-color: #FCF9F1;
+
 }
 
 .screenplay {
@@ -192,6 +195,16 @@ background-size: 1800% 1800%;
 .btn-hit:hover, .btn-1up:hover, .btn-mushroom:hover, .btn-star:hover {
   transform: translateY(4px);
   transition: 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn-hit[disabled]:hover {
+  transform: none;
+  cursor: not-allowed;
+}
+
+.btn-hit[disabled] {
+  color: black;
+  background-color: grey;
 }
 
 .btn-star {
