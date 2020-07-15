@@ -1,6 +1,7 @@
 # Challenge Mario
 
-Challenge Mario is a Vue.js app to illustrate a challenge from O'Clock school
+Challenge Mario is a Vue.js app to illustrate a challenge from O'Clock school  
+https://challenge-mario.glitch.me/
 
 ## About the app
 
